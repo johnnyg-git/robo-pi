@@ -32,10 +32,11 @@
 </script>
 
 <div class="sysinfo">
-<h2>System Information</h2>
+    <h2>System Information</h2>
     {#if error}
         <div class="error">{error}</div>
     {:else if sysinfo}
+        <div class="infosection">
             <section>
                 <h3>CPU</h3>
                 <p><strong>Model:</strong> {sysinfo.cpu.model}</p>
@@ -60,23 +61,54 @@
                 <p><strong>Uptime:</strong> {sysinfo.system.uptime}</p>
             </section>
 
-            <p><strong>Timestamp:</strong> {sysinfo.timestamp}</p>
+            <section>
+                <h3>Timestamp</h3>
+                <p><strong>Timestamp:</strong></p>
+                <p>{sysinfo.timestamp}</p>
+            </section>
+        </div>
     {:else}
         <div>Loading...</div>
     {/if}
  </div>
 
 <style>
-    .error {
-        color: red;
-    }
     .sysinfo {
-        font-family: Arial, sans-serif;
+        padding: 1rem;
+        background-color: var(--bg-color);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
     }
-    section {
-        margin-bottom: 1em;
+
+    .infosection {
+        display: flex;
+        justify-content: space-around;
+        gap: 2rem;
+        flex-wrap: wrap;
     }
-    p {
-        margin: 0.2em 0;
+
+    .infosection section {
+        flex: 1 1 25%;
+        box-sizing: border-box;
+        min-width: 200px; /* Set a fixed minimum width */
+    }
+
+    @media (max-width: 1000px) {
+        .sysinfo {
+            width: 95%;
+        }
+
+        .infosection section {
+            flex: 1 1 100%;
+        }
+    }
+
+    .error {
+        color: lightcoral;
     }
 </style>

@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --bg-color: hsl(0, 0%, 16%);
+  --bg-color-secondary: hsl(0, 0%, 20%);
+
+  --primary-color: hsl(318, 35%, 35%);
+  --secondary-color: hsl(318, 35%, 30%);
+  --accent-color: hsl(319, 35%, 50%);
+  --accent-color-brighter: hsl(319, 35%, 60%);
+
+  --text-color: hsl(0, 0%, 90%);
+  --text-color-less: hsl(0, 0%, 70%);
+
+  background: rgb(28, 23, 26);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(28, 23, 26, 1) 0%,
+    rgba(18, 18, 18, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(28, 23, 26, 1) 0%,
+    rgba(18, 18, 18, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(28, 23, 26, 1) 0%,
+    rgba(18, 18, 18, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c171a",endColorstr="#121212",GradientType=1);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 10px;
+  padding: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: normal;
+
+  transition: color 0.3s ease;
+  will-change: color;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}
